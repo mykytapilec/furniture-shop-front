@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
 
     const enterHandler = () => {
         dispatch(enter(false));
-        dispatch(clearMessage());
+        dispatch(clearMessage())
     }
 
     return (
