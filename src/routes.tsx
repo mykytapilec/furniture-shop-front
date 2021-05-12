@@ -21,7 +21,7 @@ export const useRoutes = (isAuthenticated: boolean) => {
     if(!isAuthenticated && !isEnter){
         return (
             <Switch>
-                <Route path="/">
+                <Route path="/auth">
                     <AuthPage />
                 </Route>
                 <Redirect to="/"/>
