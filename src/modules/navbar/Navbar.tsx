@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 {<li><NavLink to="/main">main</NavLink></li>}
                 {isEnter || <li><NavLink to="/basket">basket</NavLink></li>}
-                {isEnter || <li><NavLink onClick={logoutHandler} to="/">exit</NavLink></li>}
+                {isEnter || <li><NavLink onClick={logoutHandler} to="/">ext</NavLink></li>}
                 {isEnter && <li><NavLink onClick={enterHandler} to="/auth">enter</NavLink></li>}
             </ul>
             </div>
