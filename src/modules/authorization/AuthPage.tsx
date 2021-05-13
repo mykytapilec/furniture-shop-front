@@ -56,10 +56,11 @@ export const AuthPage: React.FC = () => {
                                 <input 
                                     placeholder="enter email" 
                                     id="email" 
-                                    type="text" 
                                     name="email"
+                                    type="email"
                                     value={form.email}
                                     onChange = {changeHandler}
+                                    required
                                 />
                                 <label htmlFor="email"></label>
                             </div>
@@ -68,10 +69,11 @@ export const AuthPage: React.FC = () => {
                                 <input 
                                     placeholder="enter password" 
                                     id="password" 
-                                    type="text" 
+                                    type="password" 
                                     name="password"
                                     value={form.password}
                                     onChange = {changeHandler}
+                                    required
                                 />
                                 <label htmlFor="password"></label>
                             </div>

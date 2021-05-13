@@ -18,25 +18,23 @@ interface Store {
 export const useRoutes = (isAuthenticated: boolean) => {
     const isEnter = useSelector((state: Store) => state.loginReducer.isEnter);
 
-    if(!isAuthenticated && !isEnter){
-        return (
-            <Switch>
-                <Route path="/auth">
-                    <AuthPage />
-                </Route>
-                <Redirect to="/"/>
-            </Switch>
-        )
-    }
-
     return (
         <Switch>
             <Route path="/main">
                 <MainPage />
             </Route>
-            <Route path="/basket">
-                <BasketPage />
-            </Route>
+            {
+                isAuthenticated && 
+                    <Route path="/basket">
+                        <BasketPage />
+                    </Route>
+            }
+            {
+                !isAuthenticated && !isEnter ? 
+                    <Route path="/auth">
+                        <AuthPage />
+                    </Route> : null
+            }
             <Redirect to="/"/>
         </Switch>
     )
