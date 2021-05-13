@@ -2,8 +2,10 @@ import { useCallback, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 
-import { clearMessage, enter, logout } from '../authorization/store/actions';
+import { clearMessage, enter, logout } from '../../modules/authorization/store/actions';
 import { useMessage } from '../../hooks/message.hook';
+
+import './navbar.css';
 
 interface Props {
     isAuthenticated: boolean
@@ -45,7 +47,8 @@ const Navbar: React.FC<Props> = ({isAuthenticated}) => {
 
     return (
         <nav>
-            <div className="nav-wrapper blue darken-1" style={{ padding: '0 2rem'}}>
+            <div className="nav-wrapper blue darken-1">
+            {/* <div className="nav-wrapper blue darken-1" style={{ padding: '0 2rem'}}> */}
             <span className="brand-logo"><NavLink to="/home">furniture shop</NavLink></span>       
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><NavLink to="/main">main</NavLink></li>

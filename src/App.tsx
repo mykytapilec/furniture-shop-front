@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {BrowserRouter as Router} from 'react-router-dom';
 
-import Navbar from './modules/navbar/Navbar';
+import Navbar from './components/navbar/Navbar';
+import Footer from './components/footer/Footer';
 import { useRoutes } from './routes';
 import { enter } from './modules/authorization/store/actions';
 
-import 'materialize-css';
+import './app.css';
 
 
 interface LoginState {
@@ -14,13 +15,13 @@ interface LoginState {
   userId: string;
   isEnter: boolean;
   message: string;
-}
+};
 
 declare global {
   interface Store {
     loginReducer: LoginState;
   }
-}
+};
 
 const App = () => {
   const [token, setToken] = useState('');
@@ -54,8 +55,9 @@ const App = () => {
             {routes}
           </h1>
         </div>
+        <Footer />
       </Router>
   )
-}
+};
 
 export default App;
