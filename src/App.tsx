@@ -22,7 +22,7 @@ declare global {
   }
 }
 
-const App: React.FC = () => {
+const App = () => {
   const [token, setToken] = useState('');
   const [isAuthenticated, setAuthenticated] = useState(false);
   const dispatch = useDispatch();
@@ -38,7 +38,6 @@ const App: React.FC = () => {
       setToken(data.token);
       dispatch(enter(false));
     } else if(!data && freshToken) {
-      console.log(1)
       setToken(tokenFromStore);
     } else {
       setToken('');
@@ -49,7 +48,7 @@ const App: React.FC = () => {
 
   return (
       <Router>
-        { isAuthenticated || isEnter ? <Navbar /> : null}
+        <Navbar isAuthenticated={isAuthenticated}/>
         <div className="container">
           <h1>
             {routes}

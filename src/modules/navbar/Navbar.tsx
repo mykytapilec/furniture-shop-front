@@ -5,12 +5,15 @@ import {useDispatch, useSelector} from 'react-redux';
 import { clearMessage, enter, logout } from '../authorization/store/actions';
 import { useMessage } from '../../hooks/message.hook';
 
+interface Props {
+    isAuthenticated: boolean
+}
 
-const Navbar: React.FC = () => {
+
+const Navbar: React.FC<Props> = ({isAuthenticated}) => {
 
     const message = useMessage();
     const err = useSelector((state: Store) => state.loginReducer.message);
-    const isEnter = useSelector((state: Store) => state.loginReducer.isEnter);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -39,15 +42,16 @@ const Navbar: React.FC = () => {
         dispatch(clearMessage())
     }
 
+
     return (
         <nav>
             <div className="nav-wrapper blue darken-1" style={{ padding: '0 2rem'}}>
             <span className="brand-logo">furniture shop</span>
             <ul id="nav-mobile" className="right hide-on-med-and-down">
-                {<li><NavLink to="/main">main</NavLink></li>}
-                {isEnter || <li><NavLink to="/basket">basket</NavLink></li>}
-                {isEnter || <li><NavLink onClick={logoutHandler} to="/">ext</NavLink></li>}
-                {isEnter && <li><NavLink onClick={enterHandler} to="/auth">enter</NavLink></li>}
+                <li><NavLink to="/main">main</NavLink></li>
+                {isAuthenticated && <li><NavLink to="/basket">basket</NavLink></li>}
+                {isAuthenticated && <li><NavLink onClick={logoutHandler} to="/">logout</NavLink></li>}
+                {!isAuthenticated && <li><NavLink onClick={enterHandler} to="/auth">login</NavLink></li>}
             </ul>
             </div>
         </nav>
