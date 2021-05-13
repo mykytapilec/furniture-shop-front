@@ -1,49 +1,7 @@
-// import { useCallback, useEffect } from 'react';
-// import { NavLink } from 'react-router-dom';
-// import {useDispatch, useSelector} from 'react-redux';
-
-// import { clearMessage, enter, logout } from '../authorization/store/actions';
-// import { useMessage } from '../../hooks/message.hook';
-
-// interface Props {
-//     isAuthenticated: boolean
-// }
-
 import './footer.css';
 
 
 const Footer = () => {
-
-    // const message = useMessage();
-    // const err = useSelector((state: Store) => state.loginReducer.message);
-    // const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     if(err === 'logout') message(err);
-    //   }, [
-    //       err, 
-    //       message, 
-    //     ])
-    
-    // useEffect(() => {
-    //     window.M.updateTextFields();
-    // }, [])
-
-    
-
-    // const logoutHandler = useCallback(() => {
-    //     try {
-    //         dispatch(logout());
-    //         localStorage.removeItem('userData');
-    //         dispatch(enter(true));
-    //     } catch(e){}
-    // }, [dispatch])
-
-    // const enterHandler = () => {
-    //     dispatch(enter(false));
-    //     dispatch(clearMessage())
-    // }
-
 
     return (
         <footer className="page-footer blue darken-4">
