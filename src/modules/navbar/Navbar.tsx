@@ -46,11 +46,11 @@ const Navbar: React.FC<Props> = ({isAuthenticated}) => {
     return (
         <nav>
             <div className="nav-wrapper blue darken-1" style={{ padding: '0 2rem'}}>
-            <span className="brand-logo">furniture shop</span>
+            <span className="brand-logo"><NavLink to="/home">furniture shop</NavLink></span>       
             <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li><NavLink to="/main">main</NavLink></li>
                 {isAuthenticated && <li><NavLink to="/basket">basket</NavLink></li>}
-                {isAuthenticated && <li><NavLink onClick={logoutHandler} to="/">logout</NavLink></li>}
+                {isAuthenticated && <li><NavLink onClick={logoutHandler} to="/home">logout</NavLink></li>}
                 {!isAuthenticated && <li><NavLink onClick={enterHandler} to="/auth">login</NavLink></li>}
             </ul>
             </div>

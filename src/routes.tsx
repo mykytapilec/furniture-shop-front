@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import {Switch, Route, Redirect} from 'react-router-dom';
 import { AuthPage } from './modules/authorization/AuthPage';
 import { BasketPage } from './modules/basket/BasketPage';
+import { HomePage } from './modules/home/HomePage';
 import { MainPage } from './modules/main/MainPage';
 
 
@@ -20,6 +21,9 @@ export const useRoutes = (isAuthenticated: boolean) => {
 
     return (
         <Switch>
+            <Route path="/home">
+                <HomePage />
+            </Route>
             <Route path="/main">
                 <MainPage />
             </Route>
@@ -35,7 +39,7 @@ export const useRoutes = (isAuthenticated: boolean) => {
                         <AuthPage />
                     </Route> : null
             }
-            <Redirect to="/"/>
+            <Redirect to="/home"/>
         </Switch>
     )
 };
