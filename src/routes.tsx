@@ -4,7 +4,7 @@ import { AuthPage } from './modules/authorization/AuthPage';
 import { BasketPage } from './modules/basket/BasketPage';
 import { ContactsPage } from './modules/contacts/ContactsPage';
 import { HomePage } from './modules/home/HomePage';
-import { MainPage } from './modules/main/MainPage';
+import { CatalogPage } from './modules/catalog/CatalogPage';
 
 
 interface LoginState {
@@ -28,8 +28,8 @@ export const useRoutes = (isAuthenticated: boolean) => {
             <Route path="/contacts">
                 <ContactsPage />
             </Route>
-            <Route path="/main">
-                <MainPage />
+            <Route path="/catalog">
+                <CatalogPage />
             </Route>
             {
                 isAuthenticated && 
