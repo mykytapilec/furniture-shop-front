@@ -6,7 +6,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import { useRoutes } from './routes';
 import { enter } from './modules/authorization/store/actions';
-
+import {CatalogItem} from "./modules/catalog/store/catalog.reducer";
 import './app.css';
 
 
@@ -17,9 +17,14 @@ interface LoginState {
   message: string;
 };
 
+interface CatalogState {
+  items: CatalogItem[]
+};
+
 declare global {
   interface Store {
     loginReducer: LoginState;
+    catalogReducer: CatalogState
   }
 };
 
@@ -55,7 +60,6 @@ const App = () => {
             {routes}
           </h1>
         </div>
-        <Footer />
       </Router>
   )
 };

@@ -5,17 +5,19 @@ import {applyMiddleware, combineReducers, createStore} from 'redux'
 import loginReducer from '../modules/authorization/store/loginReducer'
 import createSagaMiddleware from 'redux-saga'
 import { composeWithDevTools } from 'redux-devtools-extension'
-
+import {catalogReducer} from "../modules/catalog/store/catalog.reducer";
+import {startFetchData} from "../modules/catalog/store/catalog.saga";
 
 
 function* rootWatcher() {
-    yield all([loginWatcher(), reginWatcher()])
+    yield all([loginWatcher(), reginWatcher(),startFetchData()])
 }
 
 const sagaMiddleware = createSagaMiddleware()
 
 const rootReducer = combineReducers({
-    loginReducer
+    loginReducer,
+    catalogReducer
 })
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)))
