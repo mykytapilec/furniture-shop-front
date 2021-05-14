@@ -28,7 +28,7 @@ export const useRoutes = (isAuthenticated: boolean) => {
             <Route path="/contacts">
                 <ContactsPage />
             </Route>
-            <Route path="/main">
+            <Route path="/catalog">
                 <CatalogPage />
             </Route>
             {
