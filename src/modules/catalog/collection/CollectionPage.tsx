@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {startFetchData} from "../store/catalog.actions";
 import {RouteComponentProps, withRouter} from "react-router-dom";
-import {Loader} from "../../../components/Loader";
+import {Loader} from "../../../components/loader/Loader";
 interface RouterProps{
     path: string
 }
