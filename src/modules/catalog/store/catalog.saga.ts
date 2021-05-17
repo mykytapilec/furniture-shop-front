@@ -9,7 +9,7 @@ export function* fetchDataAsync({payload} : {payload: string}): any{
     try{
         const data = yield call(fetch,`/api/${payload}`);
         const response = yield data.json();
-        yield put(fetchDataSuccess(response.items))
+        yield put(fetchDataSuccess(response))
 
     }catch (error) {
         yield put(fetchDataFail(error))
