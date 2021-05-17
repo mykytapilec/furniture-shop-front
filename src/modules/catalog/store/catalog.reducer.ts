@@ -30,6 +30,13 @@ export const catalogReducer = (state=INITIAL_STATE, action: any) => {
                 error: ''
 
             }
+        case CatalogActionTypes.CLEAR_DATA:
+            return {
+                ...state,
+                items: [],
+                title: "",
+                error: ""
+            }
         case CatalogActionTypes.FETCH_FAIL:
             return {
                 ...state,

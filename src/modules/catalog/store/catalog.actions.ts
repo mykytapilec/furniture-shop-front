@@ -19,3 +19,9 @@ export const startFetchData = (catalogName: string)=>{
         payload: catalogName
     })
 }
+
+export const clearData = () =>{
+    return({
+        type: CatalogActionTypes.CLEAR_DATA
+    })
+}
