@@ -17,8 +17,9 @@ function* rootWatcher() {
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
-    loginReducer
-});
+    loginReducer,
+    catalogReducer
+})
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
