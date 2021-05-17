@@ -18,7 +18,8 @@ interface LoginState {
 };
 
 interface CatalogState {
-  items: CatalogItem[]
+  items: CatalogItem[],
+  title: string
 };
 
 declare global {
