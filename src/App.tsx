@@ -6,7 +6,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import { useRoutes } from './routes';
 import { enter } from './modules/authorization/store/actions';
-import {CatalogItem} from "./modules/catalog/store/catalog.reducer";
+import {CatalogItem} from "./modules/catalog/store/reducer";
 import './app.css';
 
 
