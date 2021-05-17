@@ -5,7 +5,7 @@ import { BasketPage } from './modules/basket/BasketPage';
 import { ContactsPage } from './modules/contacts/ContactsPage';
 import { HomePage } from './modules/home/HomePage';
 import { CatalogPage } from './modules/catalog/CatalogPage';
-import CollectionPage from "./modules/collection/CollectionPage";
+import CollectionPage from "./modules/catalog/collection/CollectionPage";
 
 
 interface LoginState {
