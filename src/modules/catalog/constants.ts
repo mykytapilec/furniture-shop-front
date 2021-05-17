@@ -1,1 +1,0 @@
-export const apiCatalog: string = '/api/catalog/tables';

@@ -1,1 +1,0 @@
-export const FETCH_CATALOG: string = 'FETCH_CATALOG';

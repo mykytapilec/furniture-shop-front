@@ -2,7 +2,6 @@ import {CatalogActionTypes} from "./catalog.actionTypes";
 
 interface CatalogInterface {
     items: CatalogItem[],
-    title: string
     error: string
 }
 
@@ -16,7 +15,6 @@ export interface CatalogItem{
 
 const INITIAL_STATE: CatalogInterface = {
     items : [],
-    title: '',
     error: ''
 }
 
@@ -25,8 +23,7 @@ export const catalogReducer = (state=INITIAL_STATE, action: any) => {
         case CatalogActionTypes.FETCH_SUCCESS:
             return {
                 ...state,
-                items: action.payload.items,
-                title: action.payload.title,
+                items: action.payload,
                 error: ""
 
             }
@@ -34,7 +31,6 @@ export const catalogReducer = (state=INITIAL_STATE, action: any) => {
             return {
                 ...state,
                 items: [],
-                title: "",
                 error: action.payload
             }
 
