@@ -6,6 +6,7 @@ import { clearMessage, enter, logout } from '../../modules/authorization/store/a
 import { useMessage } from '../../hooks/message.hook';
 
 import './navbar.css';
+import { SearchBar } from '../../modules/searchField/SearchBar';
 
 interface Props {
     isAuthenticated: boolean
@@ -48,15 +49,16 @@ const Navbar: React.FC<Props> = ({isAuthenticated}) => {
     return (
         <nav>
             <div className="nav-wrapper blue darken-1">
-            {/* <div className="nav-wrapper blue darken-1" style={{ padding: '0 2rem'}}> */}
-            <span className="brand-logo"><NavLink to="/home">furniture shop</NavLink></span>       
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li><NavLink to="/main">main</NavLink></li>
-                <li><NavLink to="/contacts">contacts</NavLink></li>
-                {isAuthenticated && <li><NavLink to="/basket">basket</NavLink></li>}
-                {isAuthenticated && <li><NavLink onClick={logoutHandler} to="/home">logout</NavLink></li>}
-                {!isAuthenticated && <li><NavLink onClick={enterHandler} to="/auth">login</NavLink></li>}
-            </ul>
+                {/* <div className="nav-wrapper blue darken-1" style={{ padding: '0 2rem'}}> */}
+                <span className="brand-logo"><NavLink to="/home">furniture shop</NavLink></span>     
+                <SearchBar />  
+                <ul id="nav-mobile" className="right hide-on-med-and-down">
+                    <li><NavLink to="/main">main</NavLink></li>
+                    <li><NavLink to="/contacts">contacts</NavLink></li>
+                    {isAuthenticated && <li><NavLink to="/basket">basket</NavLink></li>}
+                    {isAuthenticated && <li><NavLink onClick={logoutHandler} to="/home">logout</NavLink></li>}
+                    {!isAuthenticated && <li><NavLink onClick={enterHandler} to="/auth">login</NavLink></li>}
+                </ul>
             </div>
         </nav>
     )
