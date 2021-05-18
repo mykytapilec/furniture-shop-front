@@ -1,9 +1,9 @@
 import './footer.css';
 
-
 const Footer = () => {
 
     return (
+      <>
         <footer className="page-footer blue darken-4">
           <div className="container">
             <div className="row">
@@ -29,6 +29,7 @@ const Footer = () => {
             </div>
           </div>
         </footer>
+      </>
     )
 };
 
