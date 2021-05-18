@@ -4,8 +4,9 @@ import {ActionTypes} from "./actionTypes";
 import {fetchDataFail, fetchDataSuccess, clearData} from "./action";
 import {dataUri} from "../constants";
 
+
 const takeEvery: any = Eff.takeEvery;
-const takeLatest: any = Eff.takeLatest;
+// const takeLatest: any = Eff.takeLatest;
 
 export function* fetchDataAsync({payload}: { payload: string }): any {
     try {
@@ -17,8 +18,8 @@ export function* fetchDataAsync({payload}: { payload: string }): any {
     } catch (error) {
         yield put(fetchDataFail(error));
     }
-}
+};
 
 export function* startFetchData() {
     yield takeEvery(ActionTypes.FETCH_START, fetchDataAsync);
-}
+};

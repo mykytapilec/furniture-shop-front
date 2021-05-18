@@ -1,10 +1,11 @@
-import {ActionTypes} from "./actionTypes";
+import {ActionTypes} from './actionTypes';
+
 
 interface CatalogInterface {
     items: CatalogItem[],
     title: string,
     error: string
-}
+};
 
 export interface CatalogItem{
     price: number,
@@ -12,13 +13,13 @@ export interface CatalogItem{
     url: string,
     description: string,
     id: number
-}
+};
 
 const INITIAL_STATE: CatalogInterface = {
     items : [],
     title: '',
     error: ''
-}
+};
 
 export const reducer = (state=INITIAL_STATE, action: any) => {
     switch (action.type) {
@@ -49,5 +50,4 @@ export const reducer = (state=INITIAL_STATE, action: any) => {
             return state;
 
     }
-
-}
+};
