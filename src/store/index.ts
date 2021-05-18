@@ -1,12 +1,12 @@
 import {all} from 'redux-saga/effects';
 import { loginWatcher } from '../modules/authorization/store/loginSaga';
 import { reginWatcher } from '../modules/authorization/store/reginSaga';
-import { startFetchData } from '../modules/catalog/store/catalog.saga';
+import { startFetchData } from '../modules/catalog/store/saga';
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 import loginReducer from '../modules/authorization/store/loginReducer';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import {catalogReducer} from "../modules/catalog/store/catalog.reducer";
+import {reducer} from "../modules/catalog/store/reducer";
 
 
 function* rootWatcher() {
@@ -17,7 +17,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
     loginReducer,
-    catalogReducer
+    catalogReducer: reducer
 })
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
