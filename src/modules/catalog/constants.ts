@@ -1,1 +1,1 @@
-export const dataUri: string = '/api/catalog';
+export const dataUri: string = '/api/catalog/collections';
