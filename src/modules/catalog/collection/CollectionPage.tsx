@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {withRouter} from "react-router-dom";
-import {startFetchData} from '../store/action';
+import {fetchCollection} from '../store/actions';
+import {RouteComponentProps, withRouter} from 'react-router-dom';
 import {Loader} from '../../../components/loader/Loader';
 import {CollectionProps} from "../../../interfaces/interfaces";
 import "./collectionPage.css";
@@ -12,11 +12,11 @@ const CollectionPage: React.FC<CollectionProps> = ({history}): JSX.Element => {
     let title = history.location.pathname;
     title = title.substring(1);
 
-    const data = useSelector((state: Store) => state.catalogReducer.items);
+    const data = useSelector((state: Store) => state.catalogReducer.collectionReducer.items);
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(startFetchData(title));
+        dispatch(fetchCollection(title));
     }, [dispatch, title]);
 
     return (

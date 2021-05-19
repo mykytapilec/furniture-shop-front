@@ -6,7 +6,9 @@ import Navbar from './components/navbar/Navbar';
 // import Footer from './components/footer/Footer';
 import { useRoutes } from './routes';
 import { enter } from './modules/authorization/store/actions';
+
 import './app.css';
+
 
 
 interface LoginState {
@@ -15,6 +17,12 @@ interface LoginState {
   isEnter: boolean;
   message: string;
 };
+
+interface mainPageCatalogState {
+  titles: string[],
+  images: string[]
+};
+
 
 declare global {
   interface Store {
