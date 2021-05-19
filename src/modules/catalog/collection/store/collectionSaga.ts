@@ -1,7 +1,7 @@
 import {put, call} from 'redux-saga/effects';
 import * as Eff from 'redux-saga/effects';
 import {CollectionActionTypes} from "./actionTypes";
-import {fetchCollectionFail, fetchCollectionSuccess, clearCollection} from "../../store/actions";
+import {fetchCollectionFail, fetchCollectionSuccess, clearCollection} from "./actions";
 import {uriForCollection} from "../../constants";
 
 

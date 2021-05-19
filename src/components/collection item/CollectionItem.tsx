@@ -2,8 +2,6 @@ import {withRouter} from "react-router-dom";
 
 import {CollectionItemProps} from "../../interfaces/interfaces";
 
-import {uriForCollection} from "../../modules/catalog/constants";
-
 import "./collectionItem.css";
 
 

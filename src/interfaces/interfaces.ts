@@ -54,10 +54,20 @@ export interface mainPageCatalogState {
     titles: string[],
     images: string[]
   };
+
+export interface CollectionItemState{
+    price: number,
+    url: string,
+    description: string,
+    title: string,
+    error: string,
+    isFetched: boolean
+}
   
 export interface CatalogState {
     collectionReducer: CollectionState,
     mainPageReducer: mainPageCatalogState,
+    collectionItemReducer: CollectionItemState
   };
   
   declare global {

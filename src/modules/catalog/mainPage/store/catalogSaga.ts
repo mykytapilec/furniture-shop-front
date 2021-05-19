@@ -1,12 +1,11 @@
 import {put, call} from 'redux-saga/effects';
 import * as Eff from 'redux-saga/effects';
 import {CatalogActionTypes} from './actionTypes';
-import {fetchCatalogSuccess, fetchCatalogFail} from '../../store/actions';
+import {fetchCatalogSuccess, fetchCatalogFail} from './actions';
 import {uriForCatalog} from '../../constants';
 
 
 const takeEvery: any = Eff.takeEvery;
-// const takeLatest: any = Eff.takeLatest;
 
 export function* catalogWorker(): any {
     try {

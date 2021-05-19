@@ -36,8 +36,14 @@ export const useRoutes = (isAuthenticated: boolean) => {
             <Route exact path="/tables">
                 <CollectionPage/>
             </Route>
+            <Route path="/tables/:id">
+                <CollectionItemPage/>
+            </Route>
             <Route exact path="/beds">
                 <CollectionPage/>
+            </Route>
+            <Route path="/beds/:id">
+                <CollectionItemPage/>
             </Route>
             <Route exact path="/armchairs">
                 <CollectionPage/>
@@ -47,6 +53,9 @@ export const useRoutes = (isAuthenticated: boolean) => {
             </Route>
             <Route exact path="/sofas">
                 <CollectionPage/>
+            </Route>
+            <Route path="/sofas/:id">
+                <CollectionItemPage/>
             </Route>
             {
                 isAuthenticated && 

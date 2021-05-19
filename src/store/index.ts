@@ -8,10 +8,11 @@ import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {catalogReducer} from '../modules/catalog/store/reducer';
 import { catalogWatcher } from '../modules/catalog/mainPage/store/catalogSaga';
+import {collectionItemWatcher} from "../modules/catalog/collectionItemPage/store/collectionItemSaga";
 
 
 function* rootWatcher() {
-    yield all([loginWatcher(), reginWatcher(), catalogWatcher(), collectionWatcher()]);
+    yield all([loginWatcher(), reginWatcher(), catalogWatcher(), collectionWatcher(),collectionItemWatcher()]);
 }
 
 const sagaMiddleware = createSagaMiddleware();
