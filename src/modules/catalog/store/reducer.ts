@@ -7,3 +7,4 @@ export const catalogReducer = combineReducers({
     collectionReducer,
     mainPageReducer
 })
+

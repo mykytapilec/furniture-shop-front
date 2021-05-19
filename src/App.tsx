@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import {CatalogState} from "./interfaces/interfaces";
 import Navbar from './components/navbar/Navbar';
 // import Footer from './components/footer/Footer';
 import { useRoutes } from './routes';
 import { enter } from './modules/authorization/store/actions';
-import { CatalogItem } from './modules/catalog/store/collectionReducer';
 
 import './app.css';
 
@@ -19,20 +18,11 @@ interface LoginState {
   message: string;
 };
 
-interface CollectionState {
-  items: CatalogItem[],
-  title: string
-};
-
 interface mainPageCatalogState {
   titles: string[],
   images: string[]
 };
 
-interface CatalogState {
-  collectionReducer: CollectionState,
-  mainPageReducer: mainPageCatalogState,
-};
 
 declare global {
   interface Store {
