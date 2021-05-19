@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchCollection} from '../store/actions';
+import {fetchCollection} from './store/actions';
 import {withRouter} from 'react-router-dom';
 
 import {Loader} from '../../../components/loader/Loader';
