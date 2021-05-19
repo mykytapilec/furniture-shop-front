@@ -1,6 +1,8 @@
+import './loader.css';
+
 export const Loader: React.FC = () => {
     return (
-        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '2rem'}}> 
+        <div className="loader"> 
             <div className="preloader-wrapper big active">
                 <div className="spinner-layer spinner-blue-only">
                     <div className="circle-clipper left">
