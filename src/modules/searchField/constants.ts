@@ -1,0 +1,1 @@
+export const uriForSearch: string = '/api/search';
