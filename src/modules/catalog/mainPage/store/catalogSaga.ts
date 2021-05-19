@@ -1,8 +1,8 @@
 import {put, call} from 'redux-saga/effects';
 import * as Eff from 'redux-saga/effects';
-import {ActionTypes} from './actionTypes';
-import {fetchCatalogSuccess, fetchCatalogFail} from './actions';
-import {uriForCatalog} from '../constants';
+import {CatalogActionTypes} from './actionTypes';
+import {fetchCatalogSuccess, fetchCatalogFail} from '../../store/actions';
+import {uriForCatalog} from '../../constants';
 
 
 const takeEvery: any = Eff.takeEvery;
@@ -19,5 +19,5 @@ export function* catalogWorker(): any {
 };
 
 export function* catalogWatcher() {
-    yield takeEvery(ActionTypes.FETCH_CATALOG_START, catalogWorker);
+    yield takeEvery(CatalogActionTypes.FETCH_CATALOG_START, catalogWorker);
 };

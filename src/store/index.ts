@@ -1,13 +1,13 @@
 import {all} from 'redux-saga/effects';
 import { loginWatcher } from '../modules/authorization/store/loginSaga';
 import { reginWatcher } from '../modules/authorization/store/reginSaga';
-import { collectionWatcher } from '../modules/catalog/store/collectionSaga';
+import { collectionWatcher } from '../modules/catalog/collection/store/collectionSaga';
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 import loginReducer from '../modules/authorization/store/loginReducer';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {catalogReducer} from '../modules/catalog/store/reducer';
-import { catalogWatcher } from '../modules/catalog/store/catalogSaga';
+import { catalogWatcher } from '../modules/catalog/mainPage/store/catalogSaga';
 
 
 function* rootWatcher() {

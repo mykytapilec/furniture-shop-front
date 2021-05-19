@@ -9,6 +9,13 @@ export interface RouterProps {
 export interface CollectionProps extends RouteComponentProps<RouterProps> {
 };
 
+export interface CollectionItemProps extends RouteComponentProps<RouterProps>{
+    price: number,
+    title: string,
+    url: string,
+    description: string,
+    id: number
+}
 
 export interface CatalogInterface {
     items: CatalogItem[],

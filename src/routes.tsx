@@ -4,8 +4,9 @@ import { AuthPage } from './modules/authorization/AuthPage';
 import { BasketPage } from './modules/basket/BasketPage';
 import { ContactsPage } from './modules/contacts/ContactsPage';
 import { HomePage } from './modules/home/HomePage';
-import { CatalogPage } from './modules/catalog/CatalogPage';
+import { CatalogPage } from './modules/catalog/mainPage/CatalogPage';
 import CollectionPage from "./modules/catalog/collection/CollectionPage";
+import CollectionItemPage from "./modules/catalog/collectionItemPage/CollectionItemPage";
 
 
 interface LoginState {
@@ -23,25 +24,28 @@ export const useRoutes = (isAuthenticated: boolean) => {
 
     return (
         <Switch>
-            <Route path="/home">
+            <Route exact path="/home">
                 <HomePage />
             </Route>
-            <Route path="/contacts">
+            <Route exact path="/contacts">
                 <ContactsPage />
             </Route>
-            <Route path="/catalog">
+            <Route exact path="/catalog">
                 <CatalogPage />
             </Route>
-            <Route path="/tables">
+            <Route exact path="/tables">
                 <CollectionPage/>
             </Route>
-            <Route path="/beds">
+            <Route exact path="/beds">
                 <CollectionPage/>
             </Route>
-            <Route path="/armchairs">
+            <Route exact path="/armchairs">
                 <CollectionPage/>
             </Route>
-            <Route path="/sofas">
+            <Route path="/armchairs/:id">
+                <CollectionItemPage/>
+            </Route>
+            <Route exact path="/sofas">
                 <CollectionPage/>
             </Route>
             {
