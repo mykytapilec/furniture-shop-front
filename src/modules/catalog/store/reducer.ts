@@ -1,27 +1,14 @@
 import {ActionTypes} from './actionTypes';
+import {CatalogInterface} from "../../../interfaces/interfaces";
 
-
-interface CatalogInterface {
-    items: CatalogItem[],
-    title: string,
-    error: string
-};
-
-export interface CatalogItem{
-    price: number,
-    title: string,
-    url: string,
-    description: string,
-    id: number
-};
 
 const INITIAL_STATE: CatalogInterface = {
-    items : [],
+    items: [],
     title: '',
     error: ''
 };
 
-export const reducer = (state=INITIAL_STATE, action: any) => {
+export const reducer = (state = INITIAL_STATE, action: any) => {
     switch (action.type) {
         case ActionTypes.FETCH_SUCCESS:
             return {

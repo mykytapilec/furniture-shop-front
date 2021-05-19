@@ -1,0 +1,27 @@
+.collection_item{
+    width: 250px;
+    height: 500px;
+    border: 4px dot-dash black;
+    background-color: rgba(240, 248, 255,0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    align-content: center;
+    justify-content: center;
+    -moz-transition: all .5s ease-out;
+    -o-transition: all .5s ease-out;
+    -webkit-transition: all .5s ease-out;
+}
+.background_image{
+    height: 300px;
+    width: 250px;
+}
+img {
+    height: 100%;
+    width: 100%;
+}
+
+
+.collection_item:hover{
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
