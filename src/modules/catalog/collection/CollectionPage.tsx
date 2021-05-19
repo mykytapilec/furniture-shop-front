@@ -1,7 +1,7 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchCollection} from '../store/actions';
-import {RouteComponentProps, withRouter} from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import {Loader} from '../../../components/loader/Loader';
 import {CollectionProps} from "../../../interfaces/interfaces";
 import "./collectionPage.css";

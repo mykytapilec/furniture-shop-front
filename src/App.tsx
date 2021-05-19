@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import {CatalogState} from "./interfaces/interfaces";
+// import {CatalogState} from "./interfaces/interfaces";
 import Navbar from './components/navbar/Navbar';
 // import Footer from './components/footer/Footer';
 import { useRoutes } from './routes';
@@ -11,25 +11,25 @@ import './app.css';
 
 
 
-interface LoginState {
-  token: string;
-  userId: string;
-  isEnter: boolean;
-  message: string;
-};
+// interface LoginState {
+//   token: string;
+//   userId: string;
+//   isEnter: boolean;
+//   message: string;
+// };
 
-interface mainPageCatalogState {
-  titles: string[],
-  images: string[]
-};
+// interface mainPageCatalogState {
+//   titles: string[],
+//   images: string[]
+// };
 
 
-declare global {
-  interface Store {
-    loginReducer: LoginState;
-    catalogReducer: CatalogState
-  }
-};
+// declare global {
+//   interface Store {
+//     loginReducer: LoginState;
+//     catalogReducer: CatalogState
+//   }
+// };
 
 const App = () => {
   const [token, setToken] = useState('');
