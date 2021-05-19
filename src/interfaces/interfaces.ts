@@ -26,8 +26,36 @@ export interface CatalogItem {
 };
 
 
-export interface CatalogState {
+// export interface CatalogState {
+//     items: CatalogItem[],
+//     title: string
+// };
+
+export interface LoginState {
+    token: string;
+    userId: string;
+    isEnter: boolean;
+    message: string;
+  };
+  
+export interface CollectionState {
     items: CatalogItem[],
     title: string
-};
-
+  };
+  
+export interface mainPageCatalogState {
+    titles: string[],
+    images: string[]
+  };
+  
+export interface CatalogState {
+    collectionReducer: CollectionState,
+    mainPageReducer: mainPageCatalogState,
+  };
+  
+  declare global {
+    interface Store {
+      loginReducer: LoginState;
+      catalogReducer: CatalogState
+    }
+  };
