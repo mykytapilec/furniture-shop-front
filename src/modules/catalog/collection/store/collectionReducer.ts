@@ -1,19 +1,6 @@
-import {ActionTypes} from './actionTypes';
+import {CollectionActionTypes} from './actionTypes';
+import {CatalogInterface} from "../../../../interfaces/interfaces";
 
-
-interface CatalogInterface {
-    items: CatalogItem[],
-    title: string,
-    error: string
-};
-
-export interface CatalogItem{
-    price: number,
-    title: string,
-    url: string,
-    description: string,
-    id: number
-};
 
 const INITIAL_STATE: CatalogInterface = {
     items : [],
@@ -23,7 +10,7 @@ const INITIAL_STATE: CatalogInterface = {
 
 export const collectionReducer = (state=INITIAL_STATE, action: any) => {
     switch (action.type) {
-        case ActionTypes.FETCH_SUCCESS:
+        case CollectionActionTypes.FETCH_SUCCESS:
             return {
                 ...state,
                 items: action.payload.items,
@@ -31,14 +18,14 @@ export const collectionReducer = (state=INITIAL_STATE, action: any) => {
                 error: ''
 
             }
-        case ActionTypes.CLEAR_DATA:
+        case CollectionActionTypes.CLEAR_DATA:
             return {
                 ...state,
                 items: [],
                 title: "",
                 error: ""
             }
-        case ActionTypes.FETCH_FAIL:
+        case CollectionActionTypes.FETCH_FAIL:
             return {
                 ...state,
                 items: [],
