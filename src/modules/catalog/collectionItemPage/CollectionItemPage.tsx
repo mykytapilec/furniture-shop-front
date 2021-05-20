@@ -3,12 +3,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {withRouter} from "react-router-dom";
 
 import {Loader} from "../../../components/loader/Loader";
+import CollectionItemCard from "../../../components/collectionItemCard/CollectionItemCard";
 
 import {fetchCollectionItem} from "./store/actions";
 import {CollectionProps} from "../../../interfaces/interfaces";
 
 import "./collectionItemPage.css";
-import CollectionItemCard from "../../../components/collectionItemCard/CollectionItemCard";
 
 
 const CollectionItemPage: React.FC<CollectionProps> = ({history}) => {
