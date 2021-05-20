@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { uriForSearch } from './constants';
-import './searchField.css';
 import { fetchSearchItems } from './store/actions';
 
-// console.log(Icon)
+import './searchField.css';
 
 
 export const SearchBar: React.FC = () => {

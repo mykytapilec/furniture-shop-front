@@ -1,5 +1,6 @@
 import {put, call} from 'redux-saga/effects';
 import * as Eff from 'redux-saga/effects';
+
 import {CatalogActionTypes} from './actionTypes';
 import {fetchCatalogSuccess, fetchCatalogFail} from './actions';
 import {uriForCatalog} from '../../constants';
