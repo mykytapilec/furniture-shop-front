@@ -22,7 +22,7 @@ const CollectionItemPage: React.FC<CollectionProps> = ({history}) => {
     }, [dispatch, history.location.pathname]);
 
     return (
-        <div>
+        <div className="collection_page">
             {
                 data.isFetched ?
                     <CollectionItemCard
