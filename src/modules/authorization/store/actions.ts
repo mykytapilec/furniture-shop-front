@@ -1,4 +1,4 @@
-import { ENTER, ERROR, FETCH_LOGIN, FETCH_REGIN, LOGOUT, SET_LOGIN, CLEAR_MESSAGE } from './keys';
+import {ENTER, ERROR, FETCH_LOGIN, FETCH_REGIN, LOGOUT, SET_LOGIN, CLEAR_MESSAGE} from './keys';
 
 interface Form {
     email: String;
@@ -15,11 +15,11 @@ interface Headers {
     userId?: String;
 }
 
-export const setLogin = (payload: Payload)  => ({type: SET_LOGIN, payload});
+export const setLogin = (payload: Payload) => ({type: SET_LOGIN, payload});
 export const clearMessage = () => ({type: CLEAR_MESSAGE});
 export const enter = (flag: boolean) => ({type: ENTER, flag});
 export const logout = () => ({type: LOGOUT});
-export const error = (payload: Payload)  => ({type: ERROR, payload});
+export const error = (payload: Payload) => ({type: ERROR, payload});
 
 
 export const fetchLogin = (url: String, method: String, form: Form, headers: Headers) => {

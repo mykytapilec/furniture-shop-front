@@ -1,10 +1,12 @@
 import {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchCollection} from './store/actions';
 import {withRouter} from 'react-router-dom';
-import {Loader} from '../../../components/loader/Loader';
-import {CollectionProps} from "../../../interfaces/interfaces";
+
 import CollectionItem from "../../../components/collectionItem/CollectionItem";
+import {Loader} from '../../../components/loader/Loader';
+
+import {fetchCollection} from './store/actions';
+import {CollectionProps} from "../../../interfaces/interfaces";
 
 import "./collectionPage.css";
 

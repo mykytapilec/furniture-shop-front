@@ -2,33 +2,12 @@ import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-// import Footer from './components/footer/Footer';
+import Footer from './components/footer/Footer';
 import { useRoutes } from './routes';
 import { enter } from './modules/authorization/store/actions';
 
 import './app.css';
 
-
-
-// interface LoginState {
-//   token: string;
-//   userId: string;
-//   isEnter: boolean;
-//   message: string;
-// };
-
-// interface mainPageCatalogState {
-//   titles: string[],
-//   images: string[]
-// };
-
-
-// declare global {
-//   interface Store {
-//     loginReducer: LoginState;
-//     catalogReducer: CatalogState
-//   }
-// };
 
 const App = () => {
   const [token, setToken] = useState('');
@@ -62,6 +41,7 @@ const App = () => {
           {routes}
         </h1>
       </div>
+      <Footer/>
     </Router>
   )
 };
