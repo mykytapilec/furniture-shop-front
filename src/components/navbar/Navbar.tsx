@@ -48,20 +48,19 @@ const Navbar: React.FC<Props> = ({isAuthenticated}) => {
 
     return (
         <div className="navbar-fixed">
-        <nav>
-            <div className="nav-wrapper blue darken-1">
+          <nav>
+              <div className="nav-wrapper blue darken-1">
                 {/* <div className="nav-wrapper blue darken-1" style={{ padding: '0 2rem'}}> */}
-                <span className="brand-logo"><NavLink to="/home">furniture shop</NavLink></span>     
-                <SearchBar />  
+                <span className="brand-logo"><NavLink to="/home">furniture shop</NavLink></span>       
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    <li><NavLink to="/main">main</NavLink></li>
+                    <li><NavLink to="/catalog">catalog</NavLink></li>
                     <li><NavLink to="/contacts">contacts</NavLink></li>
                     {isAuthenticated && <li><NavLink to="/basket">basket</NavLink></li>}
                     {isAuthenticated && <li><NavLink onClick={logoutHandler} to="/home">logout</NavLink></li>}
                     {!isAuthenticated && <li><NavLink onClick={enterHandler} to="/auth">login</NavLink></li>}
                 </ul>
-            </div>
-        </nav>
+              </div>
+          </nav>
         </div>
     )
 };
