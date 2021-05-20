@@ -46,6 +46,7 @@ const Navbar: React.FC<Props> = ({isAuthenticated}) => {
 
 
     return (
+        <div className="navbar-fixed">
         <nav>
             <div className="nav-wrapper blue darken-1">
             {/* <div className="nav-wrapper blue darken-1" style={{ padding: '0 2rem'}}> */}
@@ -59,6 +60,7 @@ const Navbar: React.FC<Props> = ({isAuthenticated}) => {
             </ul>
             </div>
         </nav>
+        </div>
     )
 };
 
