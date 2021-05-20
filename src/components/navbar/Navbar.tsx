@@ -1,12 +1,12 @@
 import { useCallback, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-
+import { SearchBar } from '../../modules/searchField/SearchBar';
 import { clearMessage, enter, logout } from '../../modules/authorization/store/actions';
 import { useMessage } from '../../hooks/message.hook';
 
 import './navbar.css';
-import { SearchBar } from '../../modules/searchField/SearchBar';
+
 
 interface Props {
     isAuthenticated: boolean
@@ -51,7 +51,8 @@ const Navbar: React.FC<Props> = ({isAuthenticated}) => {
           <nav>
               <div className="nav-wrapper blue darken-1">
                 {/* <div className="nav-wrapper blue darken-1" style={{ padding: '0 2rem'}}> */}
-                <span className="brand-logo"><NavLink to="/home">furniture shop</NavLink></span>       
+                <span className="brand-logo"><NavLink to="/home">furniture shop</NavLink></span>  
+                <SearchBar />     
                 <ul id="nav-mobile" className="right hide-on-med-and-down">
                     <li><NavLink to="/catalog">catalog</NavLink></li>
                     <li><NavLink to="/contacts">contacts</NavLink></li>
