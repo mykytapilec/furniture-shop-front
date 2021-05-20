@@ -1,12 +1,12 @@
 import {put, call} from 'redux-saga/effects';
 import * as Eff from 'redux-saga/effects';
-import {ActionTypes} from "./actionTypes";
+import {CollectionActionTypes} from "./actionTypes";
 import {fetchCollectionFail, fetchCollectionSuccess, clearCollection} from "./actions";
-import {uriForCollection} from "../constants";
+import {uriForCollection} from "../../constants";
 
 
 const takeEvery: any = Eff.takeEvery;
-// const takeLatest: any = Eff.takeLatest;
+
 
 export function* collectionWorker({payload}: { payload: string }): any {
     try {
@@ -21,5 +21,5 @@ export function* collectionWorker({payload}: { payload: string }): any {
 };
 
 export function* collectionWatcher() {
-    yield takeEvery(ActionTypes.FETCH_START, collectionWorker);
+    yield takeEvery(CollectionActionTypes.FETCH_START, collectionWorker);
 };

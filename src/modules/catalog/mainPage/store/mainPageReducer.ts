@@ -1,4 +1,4 @@
-import { ActionTypes } from "./actionTypes";
+import { CatalogActionTypes } from "./actionTypes";
 
 interface MainPageInterface {
     images: string[],
@@ -12,13 +12,13 @@ const INITIAL_STATE: MainPageInterface = {
 
 export const mainPageReducer = (state = INITIAL_STATE, action: any) => {
     switch (action.type) {
-        case ActionTypes.FETCH_CATALOG_SUCCESS:
+        case CatalogActionTypes.FETCH_CATALOG_SUCCESS:
             return {
                 ...state,
                 images: action.payload.urls,
                 titles: action.payload.titles,
             }
-        case ActionTypes.FETCH_CATALOG_FAIL:
+        case CatalogActionTypes.FETCH_CATALOG_FAIL:
             return {
                 ...state,
                 items: [],
