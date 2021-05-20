@@ -5,7 +5,7 @@ import {withRouter} from 'react-router-dom';
 
 import {Loader} from '../../../components/loader/Loader';
 import {CollectionProps} from "../../../interfaces/interfaces";
-import CollectionItem from "../../../components/collection item/CollectionItem";
+import CollectionItem from "../../../components/collectionItem/CollectionItem";
 
 import "./collectionPage.css";
 

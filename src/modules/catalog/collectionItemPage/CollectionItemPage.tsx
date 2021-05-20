@@ -7,10 +7,15 @@ import {Loader} from "../../../components/loader/Loader";
 import {fetchCollectionItem} from "./store/actions";
 import {CollectionProps} from "../../../interfaces/interfaces";
 
+import "./collectionItemPage.css";
+import CollectionItemCard from "../../../components/collectionItemCard/CollectionItemCard";
+
 
 const CollectionItemPage: React.FC<CollectionProps> = ({history}) => {
     const dispatch = useDispatch();
     const data = useSelector((state: Store) => state.catalogReducer.collectionItemReducer);
+    let arrayPath = history.location.pathname.split("/");
+    const id = +arrayPath[arrayPath.length - 1];
 
     useEffect(() => {
         dispatch(fetchCollectionItem(history.location.pathname))
@@ -19,11 +24,19 @@ const CollectionItemPage: React.FC<CollectionProps> = ({history}) => {
     return (
         <div>
             {
-                data.isFetched ? <h1>{data.title}</h1> : <Loader/>
+                data.isFetched ?
+                    <CollectionItemCard
+                    id={id}
+                    description={data.description}
+                    price={data.price}
+                    url={data.url}
+                    title={data.title}
+                />
+                : <Loader/>
             }
         </div>
     )
-}
+};
 
 
 export default withRouter(CollectionItemPage);

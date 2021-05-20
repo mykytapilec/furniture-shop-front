@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import CatalogItemPreview from '../../../components/catalog item preview/CatalogItemPreview';
+import CatalogItemPreview from '../../../components/catalogItemPreview/CatalogItemPreview';
 import { Loader } from '../../../components/loader/Loader';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCatalog } from './store/actions';
