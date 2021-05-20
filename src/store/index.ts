@@ -9,18 +9,21 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import {catalogReducer} from '../modules/catalog/store/reducer';
 import { catalogWatcher } from '../modules/catalog/mainPage/store/catalogSaga';
 import {collectionItemWatcher} from "../modules/catalog/collectionItemPage/store/collectionItemSaga";
+import { searchWatcher } from '../modules/searchField/store/saga';
+import { searchResultsReducer } from '../modules/searchField/store/reducer';
 
 
 function* rootWatcher() {
-    yield all([loginWatcher(), reginWatcher(), catalogWatcher(), collectionWatcher(),collectionItemWatcher()]);
+    yield all([loginWatcher(), reginWatcher(), catalogWatcher(), collectionWatcher(),collectionItemWatcher(), searchWatcher()]);
 }
 
 const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
     loginReducer,
-    catalogReducer
-})
+    catalogReducer,
+    searchResultsReducer
+});
 
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
