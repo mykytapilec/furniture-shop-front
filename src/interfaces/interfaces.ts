@@ -55,6 +55,18 @@ export interface mainPageCatalogState {
     images: string[]
   };
 
+export interface CatalogState {
+    collectionReducer: CollectionState,
+    mainPageReducer: mainPageCatalogState,
+  };
+  
+  declare global {
+    interface Store {
+      loginReducer: LoginState;
+      catalogReducer: CatalogState
+    }
+  };
+
 export interface CollectionItemState{
     price: number,
     url: string,
